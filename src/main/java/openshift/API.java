@@ -1,3 +1,4 @@
+package openshift;
 
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
