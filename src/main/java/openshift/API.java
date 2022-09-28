@@ -1,5 +1,6 @@
 package openshift;
 
+import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
 import javax.inject.Named;
 
@@ -8,6 +9,7 @@ import org.apache.camel.builder.RouteBuilder;
 import software.amazon.awssdk.services.sns.SnsClient;
 import software.amazon.awssdk.services.sqs.SqsClient;
 
+@ApplicationScoped
 public class API extends RouteBuilder {
 
   @Produces 
