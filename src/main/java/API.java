@@ -1,10 +1,8 @@
 
 import javax.enterprise.inject.Produces;
-import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import software.amazon.awssdk.services.sns.SnsClient;
 import software.amazon.awssdk.services.sqs.SqsClient;
@@ -22,8 +20,6 @@ public class API extends RouteBuilder {
    public SqsClient createSqsClient() {
     return SqsClient.create();
   }
-
-
 
   @Override
   public void configure() throws Exception {
