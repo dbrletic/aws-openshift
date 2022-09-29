@@ -1,8 +1,7 @@
 package openshift;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.inject.Produces;
-import javax.inject.Named;
+import javax.inject.Inject;
 
 import org.apache.camel.builder.RouteBuilder;
 
@@ -12,17 +11,11 @@ import software.amazon.awssdk.services.sqs.SqsClient;
 @ApplicationScoped
 public class API extends RouteBuilder {
 
-  @Produces 
-  @Named("awsSNSClient")
-   public SnsClient creteSnsClient() {
-    return SnsClient.create();
-  }
+  @Inject
+  SqsClient awsSNSClient;
 
-  @Produces 
-  @Named("awsSQSClient")
-   public SqsClient createSqsClient() {
-    return SqsClient.create();
-  }
+  @Inject
+  SnsClient awsSQSClient;
 
   @Override
   public void configure() throws Exception {
